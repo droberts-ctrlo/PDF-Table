@@ -335,7 +335,7 @@ sub table {
         $header_props = $arg{'header_props'};
 
         # Check other parameters and put defaults if needed
-        $header_props->{'repeat'   } ||= $repeat_default;
+        $header_props->{'repeat'   } = $repeat_default if !defined $header_props->{'repeat'};
 
         $do_headers = 1;  # do headers, no repeat
         $do_headers = 2 if $header_props->{'repeat'};  # do headers w/ repeat
